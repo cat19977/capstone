@@ -1,0 +1,52 @@
+.dropdown {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+    text-align: left;
+    font-family: Arial, sans-serif;
+  }
+
+.drop-label{
+    margin-bottom: 4px;
+    font-weight: 600;
+    font-size: 20px;
+    margin-left: 4px;
+}
+
+button {
+    background-color: #b3c7dc; /* Green */
+    border: none;
+    color: black;
+    padding: 15px 15px;
+    text-align: left;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+  }
+
+svg{
+    padding-left: 7px;
+    padding-right: 0px;
+    float: right;
+}
+.text_boxes{
+    display: flex;
+    flex-direction: column;
+    margin:4px;
+    text-align: left;
+    color: black;
+    font-size: 16px;
+    background-color: rgb(211,211,211, 0);
+    padding: 30px;
+    padding-bottom: 3px;
+    padding-top: 3px;
+}
+
+.low, .medium, .high{
+    display: flex;
+    justify-content: space-between;
+    margin: 1px;
+}

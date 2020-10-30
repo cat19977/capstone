@@ -1,24 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import ParamBar from './ParamBar.js'
+import Graph from './Graph.js'
+import Plot from 'react-plotly.js';
 
 function App() {
+  
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Estimate Of Lives Saved
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        
       </header>
+      <body className="App-body">
+        <div class='sidebar-cont'>
+          <ParamBar/>
+          <button class= 'estimate_btn' type="button">Get Estimate</button>
+        </div>
+        <div class='plots-cont'>
+          <Graph/>
+        </div>
+
+        </body>
     </div>
   );
 }
