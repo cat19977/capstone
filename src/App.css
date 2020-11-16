@@ -1,36 +1,24 @@
 .App {
   text-align: center;
-  background-color:  #b3c7dc;
+  background-color: #E5E1E6;
   font-family: Arial, sans-serif;
+}
+.color-logo{
+  height: 35px;
+  width: auto;
 }
 
 .App-header {
-  height: 8%;
+  height: 2%;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 2%;
-  color: black;
-  overflow: hidden;
-  font-weight: bold;
-  font-size: 30px;
+  justify-content: space-between;
+  padding: 1%;
 }
-.App-body {
-  width: 100%;
-  min-height: 90vh;
-  display: flex;
-  flex-direction: row;
-  align-items: top;
-  justify-content: left;
-  font-size: calc(10px + 2vmin);
-  color:black;
-  overflow: hidden;
-  font-family: Arial, sans-serif;
-}
+
 .plots-cont{
   width: 100%;
-  background-color:  #b3c7dc;
+  background-color: #E5E1E6;
 }
 
 .sidebar-cont{
@@ -39,8 +27,14 @@
   margin-left: 10px;
 }
 
-.estimate_btn{
-  margin-top: 5%;
-  border-radius: 8px;
-  border: 2px solid #4CAF50;
+.page-title {
+  background-color: rgba(134, 31, 65,1);
+  padding: 1%;
+  padding-bottom: 10px;
+  color: orange;
+  text-align: left;
 }
+
+
+
+

@@ -1,52 +1,65 @@
-.dropdown {
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    justify-content: left;
-    text-align: left;
-    font-family: Arial, sans-serif;
-  }
 
-.drop-label{
-    margin-bottom: 4px;
-    font-weight: 600;
-    font-size: 20px;
-    margin-left: 4px;
+.dropdown{
+    display: block;
+    background-color:#D7D2CB;
+    padding: 2%;
+    margin: 4%;
+    height: 275px;
+    width: 300px;
+    border-width: 2px;
+    border-color: #75787B;
+    border-radius: 3px;
+    border-style: solid;
 }
 
-button {
-    background-color: #b3c7dc; /* Green */
-    border: none;
-    color: black;
-    padding: 15px 15px;
-    text-align: left;
-    text-decoration: none;
-    font-weight: 600;
-    display: inline-block;
-    font-size: 16px;
+.param-button{
+    display: flex;
+    justify-content: left;
     font-family: Arial, sans-serif;
+    background-color:#D7D2CB;
+    max-height: 50%;
+    width: 90%;
+    color: #861F41;
+    border-style: none;
   }
 
+.estimate_btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    background-color:#861F41;
+    text-align: center;
+    height: 35px;
+    width: 40%;
+    color: #FFFFFF;
+    border-style: none;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
 svg{
     padding-left: 7px;
     padding-right: 0px;
     float: right;
 }
 .text_boxes{
-    display: flex;
-    flex-direction: column;
-    margin:4px;
     text-align: left;
-    color: black;
+    color: #861F41;
     font-size: 16px;
     background-color: rgb(211,211,211, 0);
-    padding: 30px;
-    padding-bottom: 3px;
     padding-top: 3px;
+    padding-bottom: 15px;
 }
 
-.low, .medium, .high{
+.App-body {
+    width: 100vw;
+    height: 100vh;
     display: flex;
-    justify-content: space-between;
-    margin: 1px;
-}
+    flex-direction: row;
+    align-items: top;
+    justify-content: left;
+    font-size: calc(10px + 2vmin);
+    color: #861F41;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+  }

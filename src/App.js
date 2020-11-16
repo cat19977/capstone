@@ -1,29 +1,23 @@
-import React from 'react';
-import './App.css';
-import ParamBar from './ParamBar.js'
-import Graph from './Graph.js'
-import Plot from 'react-plotly.js';
+import React from "react";
+import "./App.css";
+import ParamBar from "./ParamBar.js";
 
 function App() {
-  
   return (
     <div className="App">
       <header className="App-header">
-        <p>
-          Estimate Of Lives Saved
-        </p>
-        
+        <img
+          className="Logo"
+          src="https://www.vtti.vt.edu/img/vtti_logo.png"
+          className="color-logo"
+        />
       </header>
-      <body className="App-body">
-        <div class='sidebar-cont'>
-          <ParamBar/>
-          <button class= 'estimate_btn' type="button">Get Estimate</button>
+        <div className="section page-title">
+              <h1>Estimate Of Lives Saved</h1>
+              </div>
+        <div className="sidebar-cont">
+          <ParamBar />
         </div>
-        <div class='plots-cont'>
-          <Graph/>
-        </div>
-
-        </body>
     </div>
   );
 }
