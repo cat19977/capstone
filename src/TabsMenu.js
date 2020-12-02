@@ -2,17 +2,13 @@ import React, { Component } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import Distribution from "./distribution.js";
+import './TabsMenu.css'
 class TabsMenu extends Component{
     render(){
     const results = this.props.results
     const val1 = this.props.val1
-    console.log(this.props.val1)
-    console.log(this.props.results)
-    
-    if(val1.toString() === ''){
-        return (<p>Loading...</p>)
-    }
     return (
+    <div className="tabs_container">
       <Tabs defaultIndex={1} onSelect={index => console.log(index)}>
         <TabList>
           <Tab>Lane Departure</Tab>
@@ -51,6 +47,7 @@ class TabsMenu extends Component{
             }
         </TabPanel>
       </Tabs>
+      </div>
     );
   }
 }

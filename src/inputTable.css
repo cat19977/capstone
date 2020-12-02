@@ -1,0 +1,101 @@
+
+
+tr.top_heading>td{
+    font-size: 14px;
+    font-weight: bold;
+    align-content: center;
+    padding-right: 0px;
+    padding-left: 55px
+}
+
+tr.top_heading>td:first-child{
+    font-size: 14px;
+    font-weight: bold;
+    align-content: center;
+    padding-right: 0px;
+    padding-left: 55px;
+    color: rgb(133, 133, 133)
+}
+
+tr.top_heading>td:not(:first-child){
+    font-size: 14px;
+    font-weight: bold;
+    align-content: center;
+    padding-right: 0px;
+    padding-left: 55px;
+    color: white
+}
+.table-cont{
+    width: auto;
+    display:flex;
+    flex-direction: row;
+}
+tr.heading > td:first-child{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+tr.heading > td:not(:first-child){
+    font-size: 12px;
+}
+
+
+tr.heading > td:nth-child(4){
+    font-size: 12px;
+    text-align: right;
+    padding-left:10px;
+    padding-right:10px;
+}
+tr.heading > td:nth-child(2){
+    font-size: 12px;
+    text-align: right;
+    padding-right:14px;
+    padding-left:16px;
+}
+table{
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+}
+tr.row{
+    display: flex;
+    flex-direction: row;
+    max-width: 50%;
+    align-content: left;
+
+}
+td:first-child{
+  min-width:15%;
+  text-align:center;
+
+}
+td:not(:first-child){
+    min-width:20%;
+}
+
+td>input{
+    max-width: 100%;
+    border-spacing: 0px;
+    padding:1px;
+    margin:1px;
+
+}
+
+
+.table-cont{
+    width: 100%
+}
+
+tr.top_heading > td{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    min-width: 10px;
+}
+
+.table{
+    padding:0px;
+    width: 50px;
+}
+
+

@@ -2,7 +2,7 @@ import React from "react";
 import "./ParamBar.css";
 import TabsMenu from "./TabsMenu.js";
 import calc_data from "./Calculator.js";
-import Select from "react-select";
+import Tooltip from "react-simple-tooltip";
 
 const SelectYear = ({ func }) => {
   return (
@@ -24,63 +24,44 @@ const SelectYear = ({ func }) => {
   );
 };
 
-const SelectType = ({ func }) => {
+const ToolTipButtons = ({ name, content}) => {
+  return(
+  <Tooltip
+    className='tooltip'
+    id="tooltip"
+    content={content}
+    background ='white'
+    color = 'black'
+    fontSize = '12px'
+    placement	= 'right'
+    border = '#75787B'
+    padding = {6}
+    radius = {2}
+  >
+    <button className="param-button">{name}</button>
+  </Tooltip>
+  );
+}
+
+const SelectType = ({ value, on_change }) => {
   return (
-    <div className="text_boxes">
-      <select name="option_type" onSelect={func}>
-        <option value="ls">Lives Saved</option>
-        <option value="cp">Crashes Prevented</option>
-      </select>
-    </div>
+    <select value={value} onChange={on_change}>
+      <option value="ls">Lives Saved</option>
+      <option value="cp">Crashes Prevented</option>
+    </select>
   );
 };
 
-const select_option = [
-  { value: "ls", label: "Lives Saved" },
-  { value: "cp", label: "Crashes Prevented" },
-];
-
-const styles = {
-  control: (base) => ({
-    ...base,
-    height: "20px",
-    fontSize: "15px",
-    width: "70px",
-    backgroundColor: "white",
-    borderColor: "#75787B",
-    marginBottom: "15px",
-    minHeight: "10px",
-    boxBhadow: "-.5px 0 0 #861F41;",
-    borderRadius: "2px",
-    textAlign: "top",
-    alignItems: "top",
-    justifyContent: "top",
-  }),
-  container: (provided) => ({
-    ...provided,
-    width: "250px",
-    minHeight: "1px",
-    textAlign: "top",
-    border: "none",
-    justifyContent: "top",
-  }),
-};
-
-/* const SelectType = ({func, option_type}) => {
-  return(
-      <Select className= "SelectType"
-      name='option_type'
-      value={select_option.find(item => item.value === {option_type})}
-      //onChange={func}
-      options={select_option}
-      styles = {styles}
-      />)} */
-
-//name is name of state to be changed, func is handle change
 const TextBoxes = ({ name, func }) => {
+  const default_val = name === "num_crash" ? 378000 : 9804;
   return (
     <div className="text_boxes">
-      <input type="input" name={name} onChange={func} />
+      <input
+        type="input"
+        name={name}
+        onChange={func}
+        placeholder={default_val}
+      />
     </div>
   );
 };
@@ -98,7 +79,7 @@ class ParamBar extends React.Component {
     this.state = {
       //each of these is state to whether input box is showing for each param
       results: false,
-      num_crash: 378000000,
+      num_crash: 378000,
       num_death: 9804,
       value: "ls",
       year: "11",
@@ -129,52 +110,39 @@ class ParamBar extends React.Component {
   onClickParam(e) {}
 
   render() {
-    //const { num_crash, num_death, year } = this.state;
-
-    
-    const val = this.state.value;
-    let TabsComponent;
-    console.log(val);
-    if (val.toString !== "") {
-      TabsComponent = (
-        <TabsMenu results={this.state.results} option_type={val} />
-      );
-    } else {
-      TabsComponent = null;
-    }
     return (
-      <div class="App-body">
+      <div class='ParamBody'>
         <div class="dropdown">
           <button className="param-button">Year</button>
           <SelectYear func={this.handleSelect} />
 
-          <button className="param-button" onClick={() => this.onClickParam}>
-            Number Crashes
-          </button>
+          <ToolTipButtons name='Number Crashes' content='Estimated number of crashes that occur in a year.'/>
+
           <TextBoxes name="num_crash" func={this.handleChange} />
 
-          <button className="param-button" onClick={this.onClickParam}>
-            Number Deaths
-          </button>
+          <ToolTipButtons name='Number Deaths' content='Estimated number of crash related deaths that occur in a year.'/>
+          
           <TextBoxes name="num_death" func={this.handleChange} />
 
           <button className="param-button" onClick={this.onClickParam}>
             Data Type
           </button>
           <div className="text_boxes">
-            <select value={this.state.value} onChange={this.handleSelect.bind(this)}>
-              <option value="ls">Lives Saved</option>
-              <option value="cp">Crashes Prevented</option>
-            </select>
+            <SelectType
+              value={this.state.value}
+              on_change={this.handleSelect.bind(this)}
+            />
           </div>
           <button className="estimate_btn" onClick={this.handleClick}>
             Simulate
           </button>
         </div>
-        <div>
-            <TabsMenu results={this.state.results} val1={this.state.option_type.toString()}/>
-        </div>
+        <TabsMenu
+          results={this.state.results}
+          val1={this.state.option_type.toString()}
+        />
       </div>
+      
     );
   }
 }

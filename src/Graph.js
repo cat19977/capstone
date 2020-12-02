@@ -91,10 +91,10 @@ class Graph extends React.Component {
             type: "scatter"
           };
         var i = this.props.input;
-        if(i==1){
+        if(i===1){
             this.data_int = [trace1, trace4]
         }
-        else if(i==2){
+        else if(i===2){
             this.data_int = [trace2, trace5]
         }
         else(
