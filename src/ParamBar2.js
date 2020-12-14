@@ -1,20 +1,52 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Parambar2.css";
-import TabsMenu from "./TabsMenu.js";
+import Distribution from "./distribution.js";
 import calc_data from "./Calculator1.js";
-import DataGrid from 'react-data-grid';
-import InputTable from "./InputTable"
+import InputTables from "./InputTable"
 import 'react-data-grid/dist/react-data-grid.css';
+import Tooltip from "react-simple-tooltip";
 
 
-  const SelectType = ({ value, on_change }) => {
-    return (
-      <select value={value} onChange={on_change}>
-        <option value="ls">Lives Saved</option>
-        <option value="cp">Crashes Prevented</option>
-      </select>
+  const ToolTipButtons = ({ name, content}) => {
+    return(
+    <Tooltip
+      className='tooltip'
+      id="tooltip"
+      content={content}
+      background ='white'
+      color = 'black'
+      fontSize = '14px'
+      placement	= 'top'
+      border = '#75787B'
+      padding = {6}
+      radius = {2}
+    >
+      <button className="param-button2">{name}</button>
+    </Tooltip>
     );
-  };
+  }
+
+  const format_results = (results) =>{
+    var resfr = {'lsf':[], 'lsl':[], 'pcl':[], 'pcf':[]}
+    var result = []
+    for(var key in results){
+      var yr_res = results[key]
+      var temp_result = {'mp':'','vp':'', 'me':'', 've':''}
+      for(var key1 in yr_res){
+        var new_key = key1.slice(-2)
+        temp_result[new_key] = yr_res[key1]
+      }
+      result.push(temp_result);
+      }
+      for(var res in result){
+        var results1 = calc_data(result[res]);
+        resfr['lsf'].push(results1['lsfc'])
+        resfr['lsl'].push(results1['lsld'])
+        resfr['pcf'].push(results1['cpld'])
+        resfr['pcl'].push(results1['cpfc'])
+      }
+      return resfr
+  }
 
 
 
@@ -27,69 +59,82 @@ class ParamBar2 extends React.Component {
       num_crash: 378000,
       num_death: 9804,
       value: "ls",
-      year: "11",
       option_type: "ls",
     };
-    this.handleChange = this.handleChange.bind(this);
     this.handleSelectTable = this.handleSelectTable.bind(this);
     this.handleClick = this.handleClick.bind(this);
-    this.onClickParam = this.onClickParam.bind(this);
-    this.results_dict={"1m":0, "1v":0, "2m":0, "2v":0, "3m":0, "3v":0, "4m":0, "4v":0, "5m":0, "5v":0,
-        "6m":0, "6v":0, "7m":0, "7v":0, "8m":0, "8v":0, "9m":0, "9v":0, '10m':0, "10v":0}
-        }
-
-  handleChange(e) {
-    //name of text box is same as name of state so that it updates that val
-    this.setState({ [e.target.name]: e.target.value });
   }
 
+  //puts vals in table
   handleSelectTable(e){
     //name of text box is same as name of state so that it updates that val
-      this.results_dict[[e.target.name]] = e.target.value ;
-      console.log(this.results_dict)
+      var yr = parseInt(e.target.name, 10);
+      var name = e.target.name
+      this.results_dict[yr][name] = Number(e.target.value);
     }
 
+  //handles select type dropdown
   handleSelect(event) {
     //name of text box is same as name of state so that it updates that val
     this.setState({ value: event.target.value });
   }
   
 
+  //handles when estimate is clicked
   handleClick(e) {
-    const result = calc_data(this.state.num_death, this.state.num_crash);
-    this.setState({ results: result });
-    this.setState({ option_type: this.state.value });
-    console.log(result);
+    const resfr = format_results(this.results_dict)
+    this.setState({ results: resfr });
+    this.setState({ option_type: this.state.value});
   }
 
-  onClickParam(e) {}
-
   render() {
+   /*  const tab_num = this.props.tab_num;
+    var type;
+    if(tab_num===0){
+      type='ld'
+    }
+    else if(tab_num===1){
+      type='fc'
+    }
+    else{
+      type = 'both'
+    } */
     return (
       <div className='ParamBody2'>
+
+        <div className='wlabel2'>
         <div className='grid'>
-          <InputTable on_change={this.handleSelectTable.bind(this)}/>
-          <button className="param-button" onClick={this.onClickParam}>
-            Data Type
-          </button>
+        <div className="row">
+            <div className="column">
+                <ToolTipButtons name='Prevalence' content='Percentage of cars with driver assistance systems.'/>
+              </div>
+            <div className="column">
+              <ToolTipButtons name='Efficacy' content='Percentage of crashes prevented by the sysyem.'/>
+              </div>
+        </div>
+          <InputTables on_change={this.props.handleSelectTable}/>
           <div className="text_boxes">
-            <SelectType
-              value={this.state.value}
-              on_change={this.handleSelect.bind(this)}
-            />
-          <button className="estimate_btn1" onClick={this.handleClick}>
+          <button className="estimate_btn1" name='custom' onClick={this.props.handleClick.bind(this)}>
             Simulate
           </button>
           </div>
         </div>
-        <TabsMenu
-          results={this.state.results}
-          val1={this.state.option_type.toString()}
-        />
+        </div>
+        <div className = 'Graphs'>
+        {this.state.results?
+             <Distribution
+             data_type= {this.state.option_type.toString()}
+             results = {this.state.results}
+             type = 'both'
+         />:
+            null
+            }
+        </div>
         </div>
       
     );
-  }
+  
+}
 }
 
 export default ParamBar2;

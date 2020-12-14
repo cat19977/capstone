@@ -1,6 +1,6 @@
 .react-tabs{
     font-size: calc(7px + 2vmin);
-    font-family: Arial, sans-serif;
+    font-family: "Georgia", Times, serif;;
     color: #75787B;
     margin-top: 3%;
 }
@@ -23,7 +23,23 @@
 }
 
 .tabs_container{
-    width: 100%;
-    height:100%;
-    padding-bottom: 2px
+    width: 100vw;
+    height: 100%;
+    padding-bottom: 2px;
+    margin-left: 1%;
+    margin-bottom:3%
+}
+
+.MuiFormControlLabel-root{
+    max-height: 25px;
+}
+
+.MuiTypography-body1{
+    font-size:14px !important
+}
+
+.MuiSvgIcon-root{
+    height: 15px !important;
+    width: 15px !important;
+    fill: #861F41 !important
 }

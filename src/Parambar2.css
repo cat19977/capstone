@@ -2,22 +2,12 @@
 .grid{
     display: flex;
     flex-direction: column;
-    justify-content: left;
-    background-color:#D7D2CB;
-    padding: 3%;
-    padding-bottom: 2%;
-    height: 400px;
-    width: 250px;
-    border-width: 2px;
-    border-color: #75787B;
-    border-radius: 3px;
-    border-style: solid;
-    margin-top: 12%;
-    margin-right: 7%;
-    margin-left: 2%;
+    justify-content: space-around;
+    background-color:lightgrey;
+    height: 320px;
+    min-width: 255px;
     font-size: 10px;
-    margin-bottom: 10px;
-    padding-left:1%
+
 }
 
 .param-button{
@@ -30,6 +20,7 @@
     color: #861F41;
     border-style: none;
     padding-top: 1%;
+    font-weight: bold;
   }
 
 .estimate_btn1{
@@ -61,21 +52,68 @@ svg{
 }
 
 .ParamBody2 {
-    margin-top:10px;
-    width: 100vw;
-    height: 100vh;
+    margin-top:5px;
     display: flex;
     flex-direction: row;
     align-items: top;
     justify-content: left;
     font-size: calc(10px + 2vmin);
     color: #861F41;
-    overflow: hidden;
     font-family: Arial, sans-serif;
-    padding-bottom: 600px;
   }
 
-  .css-5itiqr-BaseToolTop {
-    min-width: 200px;
-    white-space: normal;
+  .column>button{
+    float: left;
+    width: 40%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 5%;
+    color: #75787B
   }
+  
+  div.row{
+    display: flex;
+    margin-bottom: 3%;
+  }
+  
+
+  /* Clear floats after the columns */
+
+
+ .param-button2{
+   color: #861F41;
+   font-weight: bold;
+   font-family: Arial, sans-serif;
+    background-color:#D7D2CB;
+    max-height: 50%;
+    width: 100%;
+    border-style: none;
+    font-size:16px
+ }
+
+ div.column{
+  width: 50%;
+  text-align: center;
+}
+
+.css-f5brtt-BaseToolTop{
+  text-align: left;
+}
+
+.Graphs{
+  margin-bottom: 15px;
+  display: flex
+}
+
+div.wlabel2{
+  display:flex;
+  margin-top:2%;
+  text-align: left;
+  font-weight: bold;
+
+}
+
+
+
+ 

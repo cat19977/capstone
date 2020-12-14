@@ -57,8 +57,8 @@ const init_pfcw = [
 [131.8775,95.4975],
 ];
 
-export default function calc_data(ND15,NC15) {
-  var N = 1000;
+export default async function calc_data(ND15,NC15) {
+  var N = 2000;
   var dict = { lsl: [], lsf: [], pcl: [], pcf: [] };
   for (var i = 0; i < 10; i++) {
     var res_pld = PD.rbeta(N, init_pld[i][0], init_pld[i][1]);

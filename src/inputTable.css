@@ -1,101 +1,88 @@
-
-
-tr.top_heading>td{
-    font-size: 14px;
-    font-weight: bold;
-    align-content: center;
-    padding-right: 0px;
-    padding-left: 55px
-}
-
-tr.top_heading>td:first-child{
-    font-size: 14px;
-    font-weight: bold;
-    align-content: center;
-    padding-right: 0px;
-    padding-left: 55px;
-    color: rgb(133, 133, 133)
-}
-
-tr.top_heading>td:not(:first-child){
-    font-size: 14px;
-    font-weight: bold;
-    align-content: center;
-    padding-right: 0px;
-    padding-left: 55px;
-    color: white
-}
-.table-cont{
-    width: auto;
-    display:flex;
-    flex-direction: row;
-}
-tr.heading > td:first-child{
-    font-size: 14px;
-    font-weight: bold;
-}
-
-tr.heading > td:not(:first-child){
-    font-size: 12px;
-}
-
-
-tr.heading > td:nth-child(4){
-    font-size: 12px;
-    text-align: right;
-    padding-left:10px;
-    padding-right:10px;
-}
-tr.heading > td:nth-child(2){
-    font-size: 12px;
-    text-align: right;
-    padding-right:14px;
-    padding-left:16px;
-}
-table{
-    display: flex;
-    flex-direction: column;
-    max-width: 100%;
-}
-tr.row{
-    display: flex;
-    flex-direction: row;
-    max-width: 50%;
-    align-content: left;
-
-}
-td:first-child{
-  min-width:15%;
-  text-align:center;
-
-}
-td:not(:first-child){
-    min-width:20%;
-}
-
-td>input{
-    max-width: 100%;
-    border-spacing: 0px;
-    padding:1px;
-    margin:1px;
-
-}
-
-
-.table-cont{
-    width: 100%
-}
-
-tr.top_heading > td{
-    text-align: center;
+.table_container{
+    display: flex;                    /* 1 */
     align-items: center;
     justify-content: center;
-    min-width: 10px;
+    font-weight: normal;
 }
 
+tr{
+    display: flex;
+    direction:row;
+}
+p{
+    width:4%
+    
+}
+
+tr>td>input{
+    width:97%
+}
+.hi{
+    border-radius:0;
+    border-style: line;
+    border: transparent;
+    background-color: transparent;
+    text-align: center;
+
+}
 table{
-    padding:0px;
-    width: 50px;
+    width: 100%;
+    left: 0;
+    top: 0;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border: 1px solid #5b5c5e;
+    background-color:  #E5e1e6;
+    margin-bottom: 3%;
+  }
+
+tr.heading{
+    border-bottom: 1px solid #5b5c5e;
 }
 
+tr.heading1>td:first-child{
+    width: 20%;
+    font-size: 12px;
+}
+
+tr.heading1>td{
+    font-size: 12px;
+    text-align: center;
+    width: 40%;
+    border-bottom: 1px solid #5b5c5e;
+}
+
+tr.heading>td{
+    font-size: 14px;
+    text-align: center;
+    width: 50%;
+}
+
+table.prevalence{
+    margin-right: 1em;
+}
+
+
+tr>td.counter{
+    width: 20%;
+    text-align: center;
+    font-size: 13px;
+}
+
+tr:not(:last-child)>td{
+    border-bottom: 1px solid #5b5c5e;
+}
+
+tr>td{
+    width:40%   
+}
+
+tr>td:not(:last-child){
+    border-right: 1px solid #5b5c5e;
+}
+
+
+tbody.table2>tr>td{
+    width: 50%
+}
 

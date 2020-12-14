@@ -1,18 +1,20 @@
 
 .dropdown{
-    display: block;
-    background-color:#D7D2CB;
-    padding: 1%;
-    height: 240px;
-    width: 200px;
-    border-width: 2px;
-    border-color: #75787B;
-    border-radius: 3px;
-    border-style: solid;
-    margin-top: 12%;
-    margin-right: 7%;
-    margin-left: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color:lightgrey;
+    padding:2%;
+    min-height: 170px;
+    max-height: 170px;
+    min-width: 200px;
+    max-width: 200px;
     padding-bottom:2%;
+}
+
+div.input_group{
+  display: block;
+  height: 50px
 }
 .param-button{
     display: flex;
@@ -23,9 +25,10 @@
     width: 100%;
     color: #861F41;
     border-style: none;
+    padding: 0px;
   }
 
-.estimate_btn{
+button.estimate_btn{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -33,11 +36,11 @@
     background-color:#861F41;
     text-align: center;
     height: 35px;
-    width: 100px;
+    width: 110px;
     color: #FFFFFF;
     border-radius: 4px;
     border-color: #75787B;
-    margin-top: 5px
+    margin: 0px !important;
 }
 svg{
     padding-left: 7px;
@@ -49,25 +52,70 @@ svg{
     color: #861F41;
     font-size: 16px;
     background-color: rgb(211,211,211, 0);
-    padding-top: 3px;
-    padding-bottom: 15px;
 }
 
 .ParamBody {
     margin-top:10px;
-    width: 100vw;
-    height: 100vh;
     display: flex;
     flex-direction: row;
+    min-height: 600px;
     align-items: top;
     font-size: calc(10px + 2vmin);
     color: #861F41;
-    overflow: hidden;
     font-family: Arial, sans-serif;
-    padding-bottom: 600px;
   }
 
   .css-5itiqr-BaseToolTop {
     min-width: 200px;
     white-space: normal;
+  }
+  
+  select{
+    margin-top:3px
+  }
+
+  .App-body{
+    margin-top: 0px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  label{
+    font-size: 18px;
+    margin-left: 4%;
+    margin-bottom: 1%;
+    color: #75787B
+  }
+
+  .wlabel{
+    background-color: 'lightgrey';
+    min-width: 375px;
+    max-width: 375px;
+    display:block;
+    flex-direction: column;
+    padding-top: 2%;
+    text-align: left;
+    font-weight: bold;
+  }
+
+  div.Loading{
+    display: flex;
+    direction: row;
+  }
+
+  .spinner{
+    height: 500px;
+    width:800px;
+    background-color: black;
+    
+  }
+
+  .output{
+    display: flex;
+    direction: row;
   }

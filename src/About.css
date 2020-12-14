@@ -1,0 +1,19 @@
+.app_abt {
+    background-color:#E5E1E6;
+    height:100vh;
+  }
+
+  .content{
+    padding: 5%;
+    padding-top:3%;
+  }
+
+  p.about{
+    text-indent: 50px;
+    padding-left:3px;
+    height: 50%;
+    width: 60%;
+    font-size: 20px;
+  }
+  
+  
