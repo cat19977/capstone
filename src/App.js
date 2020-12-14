@@ -9,7 +9,7 @@ const App = () =>{
     let history = useHistory();
   
     function handleClick() {
-      history.push("/about");
+      history.push("capstone/about");
     }
   
     return (

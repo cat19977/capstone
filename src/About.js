@@ -8,7 +8,7 @@ const About = () =>{
         let history = useHistory();
       
         function handleClick() {
-          history.push("/");
+          history.push("/capstone");
         }
       
         return (

@@ -11,10 +11,10 @@ export default function Routerr() {
     return (
       <Router>
           <Switch>
-            <Route exact path="/">
+            <Route exact path="/capstone">
               <App />
             </Route>
-            <Route path="/about">
+            <Route path="/capstone/about">
               <About />
             </Route>
           </Switch>
