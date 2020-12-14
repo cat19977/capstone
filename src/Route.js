@@ -14,7 +14,7 @@ export default function Routerr() {
             <Route exact path="/capstone">
               <App />
             </Route>
-            <Route path="/capstone/about">
+            <Route path="/about">
               <About />
             </Route>
           </Switch>
